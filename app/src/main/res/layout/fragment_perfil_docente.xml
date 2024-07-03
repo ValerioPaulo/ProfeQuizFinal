@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/unwwwo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:layout_marginBottom="50dp"
+   >
+
+    <!-- linear principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="30dp"
+        android:padding="0dp">
+
+        <!-- Sección azul -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="#0000FF"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:text="@string/PerfilTxt"
+                android:layout_gravity="center"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- Imagen del docente -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/fot"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@raw/perfil" />
+
+            <!-- Nombre y apellido del docente -->
+            <TextView
+                android:id="@+id/NombreDato"
+                android:layout_width="389dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:textColor="#fff"
+                android:text="Carlos García"
+                />
+
+            <!-- Box de Calificacion + estrella del docente -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <!-- valor de la calificacion -->
+                    <TextView
+                        android:id="@+id/cal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="4.2"
+                        android:textColor="#fff"
+                        android:textSize="25dp" />
+
+                    <!-- imagen de la estrella-->
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@raw/estrella"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Fondo piel -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="top"
+            android:background="#ffe4b5">
+
+            <!-- Box Datos personales-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="top"
+                android:background="#fff">
+
+                <!-- Titulo Datos Personales-->
+                <TextView
+                    android:text="@string/DatoPersonalDato"
+                    android:textSize="25sp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <!-- Linea Negraa  -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#000"/>
+
+                <!-- Box de Nombre Completo -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Nombre Completo: -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/NombreCDato"
+                            android:textSize="18sp"
+                            android:textColor="#000"/>
+
+                        <!-- Get Nombre Completo de la bd -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/NombreCompletoDato"
+                            android:text="Carlos Garcia"
+                            android:textSize="18sp"
+                            android:textColor="#000"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Box de Correo Institucional-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Correo Institucional: -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/CorreoDato"
+                            android:textSize="18sp"
+                            android:textColor="#000"/>
+
+                        <!-- Get CorreoDato de la bd -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/CorreoDato"
+                            android:text="C000001@utp.edu.pe"
+                            android:textSize="18sp"
+                            android:textColor="#000"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- Box de Carrera-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Carrera: -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/CarreraDato"
+                            android:textSize="18sp"
+                            android:textColor="#000"/>
+
+                        <!-- Get CarreraDato de la bd -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/CarreraDato"
+                            android:text="Ingenieria de Software"
+                            android:textSize="18sp"
+                            android:textColor="#000"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- Box de Universidad-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Universidad:  -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/UniDato"
+                            android:textSize="18sp"
+                            android:textColor="#000"/>
+
+                        <!-- Get Universidad de la bd -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/UniDato"
+                            android:text="Universidad Nacional de Ingenieria"
+                            android:textSize="18sp"
+                            android:textColor="#000"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#fff"
+                    android:gravity="top"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Titulo acerca de mi-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/AcercaDato"
+                        android:textColor="#000"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <!-- Linea Negra  -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="#000" />
+
+                    <!-- Get Texto AcercaDato BD -->
+                    <TextView
+                        android:id="@+id/AcercaDato"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Soy profesor de Ingeniería de Software, apasionado por la enseñanza y la tecnología. Con una sólida formación en desarrollo de software y experiencia en la industria, mi objetivo es preparar a los estudiantes para enfrentar los desafíos del mundo real."
+                        android:textColor="#000"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Box Acerca de mi -->
+
+            <!-- Box Cursos en UTP-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="top"
+                android:layout_marginTop="10dp"
+                android:background="#fff">
+
+                <!-- Titulo Cursos en UTP -->
+                <TextView
+                    android:text="@string/CusoDato"
+                    android:textSize="25sp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <!-- Linea Negra  -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#000"/>
+
+                <!-- Get Texto CursoDato de la bd -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/CursoDato"
+                    android:text="Taller de programacion
+                Programacion Orientada en Objetos
+                Estructura de datos"
+                    android:textSize="18sp"
+                    android:textColor="#000"/>
+            </LinearLayout>
+
+            <!-- Box Metodologia de enseñanzaa-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="top"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="#fff">
+
+                <!-- Titulo de Metodología de enseñanza-->
+                <TextView
+                    android:text="@string/MetoDato"
+                    android:textSize="25sp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <!-- Linea Negra  -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#000"/>
+
+                <!-- Get Texto Metodato de la bd -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/MetoDato"
+                    android:text=" Mis clases se centran en principios fundamentales como el diseño de sistemas, la programación, la gestión de proyectos y la calidad del software, utilizando metodologías ágiles y herramientas modernas. Me esfuerzo por crear un ambiente de aprendizaje colaborativo, fomentando la innovación y el pensamiento crítico, para que mis alumnos se conviertan en profesionales competentes y líderes en el campo de la ingeniería de software."
+                    android:textSize="18sp"
+                    android:textColor="#000"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
