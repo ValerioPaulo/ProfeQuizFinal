@@ -32,7 +32,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SubscriptionsFragment extends Fragment {
-
+    //Definicion de variables
     private RadioGroup question1, question2, question3, question4, question5;
     private EditText commentText;
     private Button submitButton;
