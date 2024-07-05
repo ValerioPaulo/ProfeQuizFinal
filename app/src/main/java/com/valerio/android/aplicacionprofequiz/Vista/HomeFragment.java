@@ -45,7 +45,7 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         // No es necesario inicializar sharedViewModel aquí
     }
-
+    //usando el shared viewmodel
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -104,3 +104,4 @@ public class HomeFragment extends Fragment {
         });
     }
 }
+//cambios de filtrado

@@ -74,6 +74,7 @@ public class TopAdapter extends RecyclerView.Adapter<TopAdapter.ViewHolder> impl
         return topFiltered.size();
     }
 
+    //añadiendo el filtrado del busqueda
     @Override
     public Filter getFilter() {
         return new Filter() {
