@@ -33,6 +33,7 @@ import org.json.JSONObject;
 import com.valerio.android.aplicacionprofequiz.R;
 
 public class RegistroActivity extends AppCompatActivity {
+    // Declaración de variables
     EditText editEmail, editUser, editPassword;
     Button btnRegister;
     ExecutorService executorService;
@@ -44,6 +45,7 @@ public class RegistroActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_registro);
 
+        // Asignación de inputs a las variables
         editEmail = findViewById(R.id.editEmail);
         editUser = findViewById(R.id.editUsuario);
         editPassword = findViewById(R.id.editPassword);
@@ -63,8 +65,6 @@ public class RegistroActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-
     }
 
     private void RegistrarUsuario(String user, String email, String password) {
@@ -99,13 +99,13 @@ public class RegistroActivity extends AppCompatActivity {
                 if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
                     respuesta = sb.toString();
                 } else {
-                    respuesta = "Error al registrarsex";
+                    respuesta = "Error al registrarse";
                 }
 
                 conn.disconnect();
             } catch (Exception e) {
                 Log.e("Registrar", "Error:" + e.getMessage());
-                respuesta = "Error al registrar el usuariox";
+                respuesta = "Error al registrar el usuario";
             }
 
             final String finalRespuesta = respuesta;
@@ -129,18 +129,17 @@ public class RegistroActivity extends AppCompatActivity {
                         ImageView logo = toastview.findViewById(R.id.logo);
                         logo.setImageResource(R.drawable.pollocine);
                         TextView message = toastview.findViewById(R.id.tv_message);
-                        //message.setText("Bienvenido papu");
+
                         Toast toast = new Toast(getApplicationContext());
                         toast.setGravity(Gravity.CENTER_HORIZONTAL,0,0);
                         toast.setDuration(Toast.LENGTH_LONG);
                         toast.setView(toastview);
                         toast.show();
 
-
                         //Toast.makeText(RegistroActivity.this, mensaje+"X", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(RegistroActivity.this, MainActivity.class);
                         startActivity(intent);
-                    }else{
+                    } else {
                         LayoutInflater inflater = getLayoutInflater();
                         View toastview = inflater.inflate(R.layout.customtoast_layout, (ViewGroup)findViewById(R.id.toast_layout));
                         ImageView logo = toastview.findViewById(R.id.logo);
@@ -157,10 +156,7 @@ public class RegistroActivity extends AppCompatActivity {
                     }
                     //Toast.makeText(RegistroActivity.this, mensaje+"X", Toast.LENGTH_SHORT).show();/////////////////////
 
-
-
                 } catch (Exception e) {
-
                     LayoutInflater inflater = getLayoutInflater();
                     View toastview = inflater.inflate(R.layout.customtoast_layout, (ViewGroup)findViewById(R.id.toast_layout));
                     ImageView logo = toastview.findViewById(R.id.logo);
@@ -172,7 +168,6 @@ public class RegistroActivity extends AppCompatActivity {
                     toast.setDuration(Toast.LENGTH_LONG);
                     toast.setView(toastview);
                     toast.show();
-
                     //Toast.makeText(RegistroActivity.this, finalRespuesta+"X", Toast.LENGTH_SHORT).show();
                 }
             });

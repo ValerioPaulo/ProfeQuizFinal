@@ -23,11 +23,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.valerio.android.aplicacionprofequiz.R;
 import com.valerio.android.aplicacionprofequiz.Vista.models.UserSession;
@@ -35,39 +31,34 @@ import com.valerio.android.aplicacionprofequiz.databinding.ActivityLoginBinding;
 
 import org.json.JSONObject;
 
-import java.util.concurrent.ExecutorService;
-
 public class LoginActivity extends AppCompatActivity {
-    EditText editEmail, editPassword;
+    // Declaración de variables
+    EditText editTextEmail, editPassword;
     Button btnLogin;
     ActivityLoginBinding mActivityLoginBinding;
     ExecutorService executorService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         mActivityLoginBinding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(R.layout.activity_login);
         setContentView(mActivityLoginBinding.getRoot());
 
-        editEmail = findViewById(R.id.editEmail);
+        // Asignación de inputs a las variables
+        editTextEmail = findViewById(R.id.editEmail);
         editPassword = findViewById(R.id.editPassword);
         btnLogin = findViewById(R.id.iniciarSesion_login_btn);
         executorService = Executors.newSingleThreadExecutor();
 
+        // Agregar función al botón
         btnLogin.setOnClickListener(v -> {
-            String user = editEmail.getText().toString();
+            String user = editTextEmail.getText().toString();
             String password = editPassword.getText().toString();
 
             LoginUsuario(user, password);
         });
-
-        //mActivityLoginBinding.iniciarSesionLoginBtn.setOnClickListener(new View.OnClickListener() {
-        //  @Override
-        //public void onClick(View v) {
-        //  startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        //}
-        //});
 
         // Ir al registro
         TextView textViewRegistro = findViewById(R.id.textView_registro);
@@ -126,21 +117,20 @@ public class LoginActivity extends AppCompatActivity {
             runOnUiThread(() -> {
                 try {
                     JSONObject jsonResponse = new JSONObject(finalRespuesta);
-
                     String mensaje = jsonResponse.getString("mensaje");
+
                     //Personalizando el TOAST
                     LayoutInflater inflater = getLayoutInflater();
-                    View toastview = inflater.inflate(R.layout.customtoast_layout, (ViewGroup)findViewById(R.id.toast_layout));
+                    View toastview = inflater.inflate(R.layout.customtoast_layout, (ViewGroup) findViewById(R.id.toast_layout));
                     ImageView logo = toastview.findViewById(R.id.logo);
                     logo.setImageResource(R.drawable.pollocine);
                     TextView message = toastview.findViewById(R.id.tv_message);
                     message.setText(mensaje);
                     Toast toast = new Toast(getApplicationContext());
-                    toast.setGravity(Gravity.CENTER_HORIZONTAL,0,0);
+                    toast.setGravity(Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast.setDuration(Toast.LENGTH_LONG);
                     toast.setView(toastview);
                     toast.show();
-
 
                     //Toast.makeText(LoginActivity.this, mensaje, Toast.LENGTH_LONG).show();
                     boolean success = mensaje.contains("satisfactorio");
@@ -153,18 +143,17 @@ public class LoginActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     //Personalizando el TOAST
                     LayoutInflater inflater = getLayoutInflater();
-                    View toastview = inflater.inflate(R.layout.customtoast_layout, (ViewGroup)findViewById(R.id.toast_layout));
+                    View toastview = inflater.inflate(R.layout.customtoast_layout, (ViewGroup) findViewById(R.id.toast_layout));
                     ImageView logo = toastview.findViewById(R.id.logo);
                     logo.setImageResource(R.drawable.pollocine);
                     TextView message = toastview.findViewById(R.id.tv_message);
-                    message.setText("Ingresa sus datos");
+                    message.setText("Ingrese sus datos");
                     Toast toast = new Toast(getApplicationContext());
-                    toast.setGravity(Gravity.CENTER_HORIZONTAL,0,0);
+                    toast.setGravity(Gravity.CENTER_HORIZONTAL, 0, 0);
                     toast.setDuration(Toast.LENGTH_LONG);
                     toast.setView(toastview);
                     toast.show();
 
-                    //Toast.makeText(LoginActivity.this, finalRespuesta, Toast.LENGTH_LONG).show();
                 }
             });
         });
